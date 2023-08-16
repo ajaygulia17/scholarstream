@@ -1,3 +1,28 @@
+# views.py
+import os
+import cv2
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
+from .models import Certificate
+from django.shortcuts import render
+from django.http import HttpResponse
+from .models import Certificate
+
+
+def home(request):
+
+    user = request.user
+
+
+    certificates = Certificate.objects.filter(user=user)
+
+
+    for certificate in certificates:
+        certificate.generate_certificate()
+
+    return render(request, 'home.html', {'certificates': certificates})
+
 
 import os
 import cv2

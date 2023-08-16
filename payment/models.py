@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+import cv2
+
 
 from course.models import Course
 
@@ -54,11 +56,11 @@ class OrderItem(models.Model):
 
 
 SUBSCRIPTION_PRICING = {
-    'W': [9.99, 1, 'W', 'Weekly', 'USD'],
-    'BW': [14.99, 2, 'W', 'Bi-Weekly', 'USD'], 
-    'M': [24.99, 1, 'M', 'Monthly', 'USD'],
-    'Q': [69.99, 3, 'M', 'Quarterly', 'USD'],
-    'Y': [249.99, 1, 'Y', 'Yearly', 'USD']
+    'W': [9.99, 1, 'W', 'Weekly'],
+    'BW': [14.99, 2, 'W', 'Bi-Weekly'], 
+    'M': [24.99, 1, 'M', 'Monthly'],
+    'Q': [69.99, 3, 'M', 'Quarterly'],
+    'Y': [249.99, 1, 'Y', 'Yearly']
 }
 
 

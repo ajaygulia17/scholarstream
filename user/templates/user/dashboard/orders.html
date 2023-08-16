@@ -26,9 +26,7 @@
                     {% else %}
                         <p>No items in this order.</p>
                     {% endif %}
-                    {% if order.is_paid %}
-                        <p><strong>Payment Type:</strong> One Time </p>
-                    {% else %}
+                    {% if order.is_paid == False %}
                         <p><strong>Payment Type:</strong> Subscription </p>
                     {% endif %}
                 </div>
